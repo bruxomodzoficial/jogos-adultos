@@ -59,6 +59,11 @@ margin-top:20px;
 display:none;
 }
 
+#listaVideos{
+margin-top:20px;
+display:none;
+}
+
 .jogo{
 background:#111;
 margin:10px auto;
@@ -85,7 +90,7 @@ box-shadow:0 0 20px red;
 background:black;
 }
 
-iframe{
+iframe, video{
 width:100%;
 height:100%;
 border:none;
@@ -129,6 +134,7 @@ color:#aaa;
 <div class="menu">
 <a onclick="home()">Home</a>
 <a onclick="jogos()">Jogos</a>
+<a onclick="videos()">Vídeos</a>
 </div>
 
 </header>
@@ -139,25 +145,11 @@ Bem vindo ao site
 
 <div id="listaJogos">
 
-<div class="jogo" onclick="jogo1()">
-🔥 Dungeon Monsters
-</div>
-
-<div class="jogo" onclick="jogo2()">
-🔥 Novo jogo 1278
-</div>
-
-<div class="jogo" onclick="jogo3()">
-🔥 Os Desejos do Verão
-</div>
-
-<div class="jogo" onclick="jogo4()">
-🔥 Tristezas das Sombras
-</div>
-
-<div class="jogo" onclick="jogo5()">
-🔥 Noite de Terror
-</div>
+<div class="jogo" onclick="jogo1()">🔥 Dungeon Monsters</div>
+<div class="jogo" onclick="jogo2()">🔥 Novo jogo 1278</div>
+<div class="jogo" onclick="jogo3()">🔥 Os Desejos do Verão</div>
+<div class="jogo" onclick="jogo4()">🔥 Tristezas das Sombras</div>
+<div class="jogo" onclick="jogo5()">🔥 Noite de Terror</div>
 
 <div class="jogo">
 <a href="https://jezztoonz.itch.io/futantastic-adventure" target="_blank" style="color:white;text-decoration:none;display:block;">
@@ -167,7 +159,15 @@ Bem vindo ao site
 
 </div>
 
-<div class="game-box">
+<div id="listaVideos">
+
+<div class="jogo" onclick="video1()">
+🎬 Vídeo Adult Online Play
+</div>
+
+</div>
+
+<div class="game-box" id="playerArea">
 <iframe id="player"></iframe>
 </div>
 
@@ -186,37 +186,48 @@ Site +18 | Apenas para maiores de idade
 function home(){
 document.getElementById("texto").innerHTML="😈 Bem-vindo ao site... divirta-se 🔥"
 document.getElementById("listaJogos").style.display="none"
-document.getElementById("player").src=""
+document.getElementById("listaVideos").style.display="none"
+document.getElementById("playerArea").innerHTML='<iframe id="player"></iframe>'
 }
 
 function jogos(){
 document.getElementById("texto").innerHTML="🔥 Escolha um jogo e divirta-se 😈"
 document.getElementById("listaJogos").style.display="block"
+document.getElementById("listaVideos").style.display="none"
+}
+
+function videos(){
+document.getElementById("texto").innerHTML="🎬 Escolha um vídeo"
+document.getElementById("listaJogos").style.display="none"
+document.getElementById("listaVideos").style.display="block"
 }
 
 function jogo1(){
-document.getElementById("texto").innerHTML="😈 Jogando Dungeon Monsters... divirta-se 🔥"
 document.getElementById("player").src="https://collegesexgames.com/swf/cdn/1287/"
 }
 
 function jogo2(){
-document.getElementById("texto").innerHTML="😈 Jogando novo jogo... divirta-se 🔥"
 document.getElementById("player").src="https://collegesexgames.com/swf/cdn/1278/"
 }
 
 function jogo3(){
-document.getElementById("texto").innerHTML="😈 Jogando Os Desejos do Verão... divirta-se 🔥"
 document.getElementById("player").src="https://collegesexgames.com/swf/cdn/1295/"
 }
 
 function jogo4(){
-document.getElementById("texto").innerHTML="😈 Jogando Tristezas das Sombras... divirta-se 🔥"
 document.getElementById("player").src="https://collegesexgames.com/swf/cdn/1349/"
 }
 
 function jogo5(){
-document.getElementById("texto").innerHTML="😈 Jogando Noite de Terror... divirta-se 🔥"
 document.getElementById("player").src="https://collegesexgames.com/swf/cdn/1266/"
+}
+
+function video1(){
+document.getElementById("playerArea").innerHTML = `
+<video controls autoplay>
+<source src="https://porngames.com/images/adult-online-play.mp4" type="video/mp4">
+</video>
+`
 }
 
 </script>
