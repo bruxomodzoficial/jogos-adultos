@@ -29,7 +29,7 @@ header {
     background: linear-gradient(to bottom, rgba(40,0,0,0.5), transparent);
     padding:25px 5%;
     display:flex;
-    justify-content:space-between;
+    flex-direction:column;
     align-items:center;
     border-bottom:1px solid rgba(255,0,0,0.2);
 }
@@ -44,7 +44,7 @@ header {
     text-shadow:0 0 15px #ff0000;
 }
 
-.nav-menu { display:flex; gap:15px; }
+.nav-menu { display:flex; gap:15px; margin-top:15px; }
 
 .nav-menu button {
     background: rgba(255,255,255,0.05);
@@ -65,16 +65,27 @@ header {
     box-shadow:0 0 15px #ff1a1a;
 }
 
+/* =================== WELCOME =================== */
 .welcome-msg {
+    display:flex;
+    justify-content:center;
+    align-items:center;
     text-align:center;
-    margin:40px 0;
-    font-size:20px;
+    margin:40px 20px;
+    font-size:36px;
     text-transform:uppercase;
     letter-spacing:2px;
+    font-family:'Orbitron', sans-serif;
+    color:#ff1a1a;
+    text-shadow: 0 0 10px #ff1a1a, 0 0 20px #ff4d4d, 0 0 30px #ff0000;
 }
 
-.welcome-msg span { color:#ff1a1a; font-weight:bold; }
+.welcome-msg span { 
+    color:#fff700;
+    margin-left:10px;
+}
 
+/* =================== GRID JOGOS =================== */
 .main-container { max-width:1100px; margin:0 auto; padding:0 20px; }
 
 .grid-jogos {
@@ -138,6 +149,7 @@ header {
     box-shadow:0 0 10px #ff0000;
 }
 
+/* =================== PLAYER =================== */
 .player-container {
     width:100%;
     max-width:800px;
@@ -174,34 +186,14 @@ header {
 
 footer { text-align:center; font-size:10px; color:#666; margin-top:40px; text-transform:uppercase; }
 
-/* GIF ANÚNCIO FIXO */
-.gif-ad {
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    width:120px;
-    z-index:9999;
-    border-radius:10px;
-    overflow:hidden;
-    box-shadow:0 0 15px rgba(255,0,0,0.7);
-}
-
-.gif-ad img { width:100%; display:block; }
-
+/* RESPONSIVO */
 @media (max-width:768px) {
     .grid-jogos { grid-template-columns:1fr; }
-    .gif-ad { width:90px; }
+    .welcome-msg { font-size:28px; margin:30px 10px; }
 }
 </style>
 </head>
 <body>
-
-<!-- GIF ANÚNCIO -->
-<div class="gif-ad">
-<a href="#" target="_blank">
-<img src="https://s3.truyen-hentai.com/688d3c4031467038636069.gif">
-</a>
-</div>
 
 <header>
 <div class="logo">🔥 PORN GAMES</div>
@@ -219,9 +211,9 @@ footer { text-align:center; font-size:10px; color:#666; margin-top:40px; text-tr
 <div class="main-container">
 <div class="grid-jogos">
 
-<!-- 6 JOGOS -->
+<!-- 6 JOGOS COM GIF COMO THUMB -->
 <div class="card" onclick="playGame('https://collegesexgames.com/swf/cdn/1287/')">
-<div class="card-thumb" style="background-image:url('https://img.freepik.com/fotos-premium/espada-magica-neon-em-um-altar-no-estilo-de-jogo-de-fantasia_1022456-1234.jpg')"></div>
+<div class="card-thumb" style="background-image:url('https://s3.truyen-hentai.com/688d3c4031467038636069.gif')"></div>
 <div class="card-content">
 <h3>Dungeon Monsters</h3>
 <button class="btn-jogar">Jogar Agora →</button>
@@ -229,7 +221,7 @@ footer { text-align:center; font-size:10px; color:#666; margin-top:40px; text-tr
 </div>
 
 <div class="card" onclick="playGame('https://collegesexgames.com/swf/cdn/1278/')">
-<div class="card-thumb" style="background-image:url('https://img.freepik.com/fotos-premium/arma-futurista-sci-fi-com-luzes-neon-estetica-gamer_1022456-5678.jpg')"></div>
+<div class="card-thumb" style="background-image:url('https://s3.truyen-hentai.com/688d3c4031467038636069.gif')"></div>
 <div class="card-content">
 <h3>Novo Jogo 1278</h3>
 <button class="btn-jogar">Jogar Agora →</button>
@@ -237,7 +229,7 @@ footer { text-align:center; font-size:10px; color:#666; margin-top:40px; text-tr
 </div>
 
 <div class="card" onclick="playGame('https://collegesexgames.com/swf/cdn/1295/')">
-<div class="card-thumb" style="background-image:url('https://img.freepik.com/fotos-premium/moedas-de-ouro-magicas-e-gemas-em-estilo-de-interface-de-jogo_1022456-9012.jpg')"></div>
+<div class="card-thumb" style="background-image:url('https://s3.truyen-hentai.com/688d3c4031467038636069.gif')"></div>
 <div class="card-content">
 <h3>Desejos do Verão</h3>
 <button class="btn-jogar">Jogar Agora →</button>
@@ -245,7 +237,7 @@ footer { text-align:center; font-size:10px; color:#666; margin-top:40px; text-tr
 </div>
 
 <div class="card" onclick="playGame('https://collegesexgames.com/swf/cdn/1349/')">
-<div class="card-thumb" style="background-image:url('https://img.freepik.com/fotos-premium/cristal-magico-roxo-flutuando-em-ambiente-escuro-arte-de-jogo_1022456-3456.jpg')"></div>
+<div class="card-thumb" style="background-image:url('https://s3.truyen-hentai.com/688d3c4031467038636069.gif')"></div>
 <div class="card-content">
 <h3>Tristezas das Sombras</h3>
 <button class="btn-jogar">Jogar Agora →</button>
@@ -253,7 +245,7 @@ footer { text-align:center; font-size:10px; color:#666; margin-top:40px; text-tr
 </div>
 
 <div class="card" onclick="playGame('https://collegesexgames.com/swf/cdn/1266/')">
-<div class="card-thumb" style="background-image:url('https://img.freepik.com/fotos-premium/grimorio-antigo-com-olho-central-e-aura-magica-ilustracao-de-jogo_1022456-7890.jpg')"></div>
+<div class="card-thumb" style="background-image:url('https://s3.truyen-hentai.com/688d3c4031467038636069.gif')"></div>
 <div class="card-content">
 <h3>Noite de Terror</h3>
 <button class="btn-jogar">Jogar Agora →</button>
@@ -261,7 +253,7 @@ footer { text-align:center; font-size:10px; color:#666; margin-top:40px; text-tr
 </div>
 
 <div class="card" onclick="window.open('https://jezztoonz.itch.io/futantastic-adventure', '_blank')">
-<div class="card-thumb" style="background-image:url('https://img.freepik.com/fotos-premium/nucleo-de-energia-cyberpunk-pulsando-com-luz-neon-estilo-rpg_1022456-1122.jpg')"></div>
+<div class="card-thumb" style="background-image:url('https://s3.truyen-hentai.com/688d3c4031467038636069.gif')"></div>
 <div class="card-content">
 <h3>Futantastic Adventure</h3>
 <button class="btn-jogar">Jogar Agora →</button>
