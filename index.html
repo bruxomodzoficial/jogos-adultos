@@ -29,7 +29,7 @@ header {
     background: linear-gradient(to bottom, rgba(40,0,0,0.5), transparent);
     padding:25px 5%;
     display:flex;
-    flex-direction:column;
+    justify-content:space-between;
     align-items:center;
     border-bottom:1px solid rgba(255,0,0,0.2);
 }
@@ -44,7 +44,7 @@ header {
     text-shadow:0 0 15px #ff0000;
 }
 
-.nav-menu { display:flex; gap:15px; margin-top:15px; }
+.nav-menu { display:flex; gap:15px; }
 
 .nav-menu button {
     background: rgba(255,255,255,0.05);
@@ -65,27 +65,16 @@ header {
     box-shadow:0 0 15px #ff1a1a;
 }
 
-/* =================== WELCOME =================== */
 .welcome-msg {
-    display:flex;
-    justify-content:center;
-    align-items:center;
     text-align:center;
-    margin:40px 20px;
-    font-size:36px;
+    margin:40px 0;
+    font-size:20px;
     text-transform:uppercase;
     letter-spacing:2px;
-    font-family:'Orbitron', sans-serif;
-    color:#ff1a1a;
-    text-shadow: 0 0 10px #ff1a1a, 0 0 20px #ff4d4d, 0 0 30px #ff0000;
 }
 
-.welcome-msg span { 
-    color:#fff700;
-    margin-left:10px;
-}
+.welcome-msg span { color:#ff1a1a; font-weight:bold; }
 
-/* =================== GRID JOGOS =================== */
 .main-container { max-width:1100px; margin:0 auto; padding:0 20px; }
 
 .grid-jogos {
@@ -149,7 +138,6 @@ header {
     box-shadow:0 0 10px #ff0000;
 }
 
-/* =================== PLAYER =================== */
 .player-container {
     width:100%;
     max-width:800px;
@@ -186,10 +174,8 @@ header {
 
 footer { text-align:center; font-size:10px; color:#666; margin-top:40px; text-transform:uppercase; }
 
-/* RESPONSIVO */
 @media (max-width:768px) {
     .grid-jogos { grid-template-columns:1fr; }
-    .welcome-msg { font-size:28px; margin:30px 10px; }
 }
 </style>
 </head>
