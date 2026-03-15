@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🔥 PORN GAMES - Premium Experience</title>
-
+<title>🔥 UNIVERSO NOX - Jogos & GIF</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap');
 
@@ -45,7 +44,6 @@ header {
 }
 
 .nav-menu { display:flex; gap:15px; }
-
 .nav-menu button {
     background: rgba(255,255,255,0.05);
     border:1px solid rgba(255,255,255,0.3);
@@ -58,7 +56,6 @@ header {
     font-size:12px;
     transition:0.3s;
 }
-
 .nav-menu button:hover {
     background:#ff1a1a;
     border-color:#ff1a1a;
@@ -72,7 +69,6 @@ header {
     text-transform:uppercase;
     letter-spacing:2px;
 }
-
 .welcome-msg span { color:#ff1a1a; font-weight:bold; }
 
 .main-container { max-width:1100px; margin:0 auto; padding:0 20px; }
@@ -95,7 +91,6 @@ header {
     transition:0.3s;
     box-shadow:var(--neon-shadow);
 }
-
 .card:hover { transform:scale(1.03); box-shadow:0 0 25px rgba(255,0,0,0.8); }
 
 .card-thumb {
@@ -148,18 +143,22 @@ header {
     box-shadow:var(--neon-shadow);
     background:black;
     display:flex;
-    flex-direction:column;
     justify-content:center;
     align-items:center;
     overflow:hidden;
+    position:relative;
 }
 
-#player-frame { width:100%; height:100%; border:none; display:none; }
+#player-frame, #player-gif {
+    width:100%;
+    height:100%;
+    border:none;
+    display:none;
+}
 
-.placeholder-text { color:#444; text-align:center; font-size:14px; text-transform:uppercase; }
+.placeholder-text { color:#444; text-align:center; font-size:14px; text-transform:uppercase; position:absolute; }
 
 .footer-social { text-align:center; margin:30px 0; }
-
 .insta-btn {
     color:white;
     text-decoration:none;
@@ -169,109 +168,129 @@ header {
     border-radius:20px;
     transition:0.3s;
 }
-
 .insta-btn:hover { background: rgba(255,255,255,0.1); }
 
 footer { text-align:center; font-size:10px; color:#666; margin-top:40px; text-transform:uppercase; }
 
-@media (max-width:768px) {
-    .grid-jogos { grid-template-columns:1fr; }
-}
+@media (max-width:768px) { .grid-jogos { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
 
 <header>
-<div class="logo">🔥 PORN GAMES</div>
-<div class="nav-menu">
-<button onclick="location.reload()">Home</button>
-<button onclick="window.scrollTo(0,300)">Jogos</button>
-<button onclick="window.scrollTo(0,300)">Vídeos</button>
-</div>
+    <div class="logo">🔥 UNIVERSO NOX</div>
+    <div class="nav-menu">
+        <button onclick="showMenu('jogos')">Jogos</button>
+        <button onclick="showMenu('gifs')">GIFs</button>
+    </div>
 </header>
 
-<div class="welcome-msg">
-😈 Bem-vindo ao <span>Universo Nox</span>... Divirta-se 🔥
-</div>
+<div class="welcome-msg"> 😎 Bem-vindo ao <span>Universo Nox</span>... Divirta-se 🔥 </div>
 
 <div class="main-container">
-<div class="grid-jogos">
 
-<!-- 6 JOGOS COM GIF COMO THUMB -->
-<div class="card" onclick="playGame('https://collegesexgames.com/swf/cdn/1287/')">
-<div class="card-thumb" style="background-image:url('https://i.redd.it/p6nrkwo8wfze1.gif')"></div>
-<div class="card-content">
-<h3>Dungeon Monsters</h3>
-<button class="btn-jogar">Jogar Agora →</button>
-</div>
-</div>
-
-
-<div class="card" onclick="playGame('https://collegesexgames.com/swf/cdn/1278/')">
-<div class="card-thumb" style="background-image:url('https://i.redd.it/qgajmj9hkxpf1.gif')"></div>
-<div class="card-content">
-<h3>Novo Jogo 1278</h3>
-<button class="btn-jogar">Jogar Agora →</button>
-</div>
-</div>
-
-<div class="card" onclick="playGame('https://collegesexgames.com/swf/cdn/1295/')">
-<div class="card-thumb" style="background-image:url('https://i.redd.it/7i12fqom6yog1.gif')"></div>
-<div class="card-content">
-<h3>Desejos do Verão</h3>
-<button class="btn-jogar">Jogar Agora →</button>
-</div>
-</div>
-
-<div class="card" onclick="playGame('https://collegesexgames.com/swf/cdn/1349/')">
-<div class="card-thumb" style="background-image:url('https://s3.truyen-hentai.com/688d3c4031467038636069.gif')"></div>
-<div class="card-content">
-<h3>Tristezas das Sombras</h3>
-<button class="btn-jogar">Jogar Agora →</button>
-</div>
-</div>
-
-<div class="card" onclick="playGame('https://collegesexgames.com/swf/cdn/1266/')">
-<div class="card-thumb" style="background-image:url('https://s3.truyen-hentai.com/6887f61b7d852880402965.gif')"></div>
-<div class="card-content">
-<h3>Noite de Terror</h3>
-<button class="btn-jogar">Jogar Agora →</button>
-</div>
-</div>
-
-<div class="card" onclick="window.open('https://jezztoonz.itch.io/futantastic-adventure', '_blank')">
-<div class="card-thumb" style="background-image:url('https://i.redd.it/xxbvunm0xcoe1.gif')"></div>
-<div class="card-content">
-<h3>Futantastic Adventure</h3>
-<button class="btn-jogar">Jogar Agora →</button>
-</div>
+<!-- MENU JOGOS -->
+<div id="menu-jogos" class="grid-jogos">
+    <div class="card" onclick="playGame('https://collegesexgames.com/swf/cdn/1287/')">
+        <div class="card-thumb" style="background-image:url('https://i.redd.it/p6nrkwo8wfze1.gif')"></div>
+        <div class="card-content">
+            <h3>Dungeon Monsters</h3>
+            <button class="btn-jogar">Jogar Agora →</button>
+        </div>
+    </div>
+    <div class="card" onclick="playGame('https://collegesexgames.com/swf/cdn/1278/')">
+        <div class="card-thumb" style="background-image:url('https://i.redd.it/qgajmj9hkxpf1.gif')"></div>
+        <div class="card-content">
+            <h3>Novo Jogo 1278</h3>
+            <button class="btn-jogar">Jogar Agora →</button>
+        </div>
+    </div>
+    <div class="card" onclick="playGame('https://collegesexgames.com/swf/cdn/1295/')">
+        <div class="card-thumb" style="background-image:url('https://i.redd.it/7i12fqom6yog1.gif')"></div>
+        <div class="card-content">
+            <h3>Desejos do Verão</h3>
+            <button class="btn-jogar">Jogar Agora →</button>
+        </div>
+    </div>
+    <div class="card" onclick="playGame('https://collegesexgames.com/swf/cdn/1349/')">
+        <div class="card-thumb" style="background-image:url('https://s3.truyen-hentai.com/688d3c4031467038636069.gif')"></div>
+        <div class="card-content">
+            <h3>Tristezas das Sombras</h3>
+            <button class="btn-jogar">Jogar Agora →</button>
+        </div>
+    </div>
+    <div class="card" onclick="playGame('https://collegesexgames.com/swf/cdn/1266/')">
+        <div class="card-thumb" style="background-image:url('https://s3.truyen-hentai.com/6887f61b7d852880402965.gif')"></div>
+        <div class="card-content">
+            <h3>Noite de Terror</h3>
+            <button class="btn-jogar">Jogar Agora →</button>
+        </div>
+    </div>
+    <div class="card" onclick="playGame('https://jezztoonz.itch.io/futantastic-adventure')">
+        <div class="card-thumb" style="background-image:url('https://s3.truyen-hentai.com/6834e716d793d429605080.gif')"></div>
+        <div class="card-content">
+            <h3>Futantastic Adventure</h3>
+            <button class="btn-jogar">Jogar Agora →</button>
+        </div>
+    </div>
 </div>
 
+<!-- MENU GIFS -->
+<div id="menu-gifs" class="grid-jogos" style="display:none;">
+    <div class="card" onclick="showGIF('https://s3.truyen-hentai.com/6834e716d793d429605080.gif')">
+        <div class="card-thumb" style="background-image:url('https://s3.truyen-hentai.com/6834e716d793d429605080.gif')"></div>
+        <div class="card-content">
+            <h3>GIF Especial</h3>
+            <button class="btn-jogar">Ver GIF →</button>
+        </div>
+    </div>
 </div>
 
 <div class="player-container" id="player-box">
-<div id="placeholder" class="placeholder-text">Selecione um conteúdo para carregar</div>
-<iframe id="player-frame"></iframe>
+    <div id="placeholder" class="placeholder-text">Selecione um jogo ou GIF para carregar</div>
+    <iframe id="player-frame"></iframe>
+    <img id="player-gif" src="" alt="GIF do menu">
 </div>
 
 <div class="footer-social">
-<a href="https://instagram.com/zakmodz1" target="_blank" class="insta-btn">📸 Siga no Instagram @zakmodz1</a>
+    <a href="https://instagram.com/zakmodz1" target="_blank" class="insta-btn">📈 Siga no Instagram @zakmodz1</a>
 </div>
 
 <footer>
-CONTEÚDO PARA MAIORES DE 18 ANOS<br>
-© 2024 ISAC SANTOS
+    CONTEÚDO PARA MAIORES DE 18 ANOS<br>
+    © 2024 ISAC SANTOS
 </footer>
 </div>
 
 <script>
 function playGame(url){
+    document.getElementById('player-gif').style.display='none';
     const frame = document.getElementById('player-frame');
     const placeholder = document.getElementById('placeholder');
     placeholder.style.display='none';
     frame.style.display='block';
     frame.src = url;
     document.getElementById('player-box').scrollIntoView({behavior:'smooth'});
+}
+
+function showGIF(url){
+    document.getElementById('player-frame').style.display='none';
+    const gif = document.getElementById('player-gif');
+    const placeholder = document.getElementById('placeholder');
+    placeholder.style.display='none';
+    gif.style.display='block';
+    gif.src = url;
+    document.getElementById('player-box').scrollIntoView({behavior:'smooth'});
+}
+
+function showMenu(menu){
+    if(menu === 'jogos'){
+        document.getElementById('menu-jogos').style.display='grid';
+        document.getElementById('menu-gifs').style.display='none';
+    } else {
+        document.getElementById('menu-jogos').style.display='none';
+        document.getElementById('menu-gifs').style.display='grid';
+    }
 }
 </script>
 
