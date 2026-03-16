@@ -319,8 +319,72 @@ Bem-vindo ao <span>Daddy</span>
             <button class="btn-jogar">Ver Vídeo</button>
         </div>
     </div>
+    
+    
+    <div class="card" onclick="playGame('https://www.pornhub.com/embed/66932120e1347')">
+
+<div class="card-thumb" style="background-image:url('https://ei.phncdn.com/videos/202407/14/455139331/original/(m=eaAaGwObaaaa)(mh=xU9Xq1W37t7Ccz9v)6.jpg')"></div>
+
+<div class="card-content">
+<h3>Vídeo 8</h3>
+<button class="btn-jogar">Ver Vídeo</button>
+</div>
+</div>
+
+
+
+    <div class="card" onclick="playGame('https://pt.pornhub.com/embed/64cdf7b63443d')">
+
+<div class="card-thumb" style="background-image:url('https://ei.phncdn.com/videos/202308/05/436829791/original/(m=eaAaGwObaaaa)(mh=7eW6kdJpwVZC45tJ)13.jpg')"></div>
+
+<div class="card-content">
+<h3>Vídeo 9</h3>
+<button class="btn-jogar">Ver Vídeo</button>
+</div>
+</div>
+
+
+
+    <div class="card" onclick="playGame('https://www.pornhub.com/embed/68c6d84a72ef9')">
+
+<div class="card-thumb" style="background-image:url('https://files.catbox.moe/uu7lvw.png')"></div>
+
+<div class="card-content">
+<h3>Vídeo 10</h3>
+<button class="btn-jogar">Ver Vídeo</button>
+</div>
+</div>
+
+
+
+
+    <div class="card" onclick="playGame('https://www.pornhub.com/embed/ph62c9c977952c7')">
+
+<div class="card-thumb" style="background-image:url('https://files.catbox.moe/ud3xsk.jpg')"></div>
+
+<div class="card-content">
+<h3>Vídeo 11</h3>
+<button class="btn-jogar">Ver Vídeo</button>
+</div>
+</div>
+
+
+
+
+    <div class="card" onclick="playGame('https://www.pornhub.com/embed/ph62da394525ca7')">
+
+<div class="card-thumb" style="background-image:url('https://files.catbox.moe/ixpmx4.png')"></div>
+
+<div class="card-content">
+<h3>Vídeo 12</h3>
+<button class="btn-jogar">Ver Vídeo</button>
+</div>
+</div>
 
 </div>
+
+
+
 
 
 
@@ -495,20 +559,27 @@ Siga no Instagram:
 <script>
 
 function playGame(url){
-document.getElementById('player-video').style.display='none';
+const video=document.getElementById('player-video');
+video.pause();
+video.style.display='none';
+
 const frame=document.getElementById('player-frame');
+
 document.getElementById('placeholder').style.display='none';
+
 frame.style.display='block';
 frame.src=url;
 }
 
 function showVideo(url){
-document.getElementById('player-frame').style.display='none';
-const video=document.getElementById('player-video');
+document.getElementById('player-video').style.display='none';
+
+const frame = document.getElementById('player-frame');
+
 document.getElementById('placeholder').style.display='none';
-video.style.display='block';
-video.src=url;
-video.play();
+
+frame.style.display='block';
+frame.src = url;
 }
 
 function showMenu(menu){
