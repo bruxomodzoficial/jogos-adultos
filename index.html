@@ -26,156 +26,80 @@ padding-bottom:50px;
 }
 
 header{
-background:linear-gradient(to bottom,rgba(40,0,0,0.5),transparent);
 padding:25px 5%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-border-bottom:1px solid rgba(255,0,0,0.2);
 }
 
 .logo{
-font-family:'Orbitron',sans-serif;
+font-family:'Orbitron';
 color:#ff1a1a;
 font-size:28px;
-text-shadow:0 0 15px #ff0000;
 }
 
-.nav-menu{display:flex;gap:15px;}
+.nav-menu{display:flex;gap:10px;}
 
 .nav-menu button{
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.3);
+background:#111;
+border:1px solid #333;
 color:white;
-padding:8px 25px;
+padding:8px 20px;
 border-radius:20px;
 cursor:pointer;
-font-weight:bold;
-text-transform:uppercase;
-font-size:12px;
-transition:0.3s;
 }
 
 .nav-menu button:hover{
 background:#ff1a1a;
-border-color:#ff1a1a;
-box-shadow:0 0 15px #ff1a1a;
-}
-
-.welcome-msg{
-text-align:center;
-margin:40px 0;
-font-size:20px;
-text-transform:uppercase;
-letter-spacing:2px;
-}
-
-.welcome-msg span{color:#ff1a1a;font-weight:bold;}
-
-.main-container{
-max-width:1100px;
-margin:0 auto;
-padding:0 20px;
 }
 
 .grid-jogos{
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:20px;
-margin-bottom:40px;
+margin-top:30px;
 }
 
 .card{
-background:var(--card-bg);
+background:#111;
 border:var(--neon-border);
-border-radius:12px;
-height:160px;
+border-radius:10px;
+height:150px;
 display:flex;
-overflow:hidden;
 cursor:pointer;
-transition:0.3s;
-box-shadow:var(--neon-shadow);
-}
-
-.card:hover{
-transform:scale(1.03);
-box-shadow:0 0 25px rgba(255,0,0,0.8);
+overflow:hidden;
 }
 
 .card-thumb{
 width:45%;
 background-size:cover;
-background-position:center;
-border-right:1px solid rgba(255,0,0,0.3);
 }
 
 .card-content{
 width:55%;
-padding:15px;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-text-align:center;
-}
-
-.card-content h3{
-font-size:14px;
-margin-bottom:15px;
-font-family:'Orbitron',sans-serif;
-}
-
-.btn-jogar{
-background:#ff1a1a;
-color:white;
-border:none;
-padding:6px 15px;
-border-radius:15px;
-font-size:10px;
-font-weight:bold;
-cursor:pointer;
-box-shadow:0 0 10px #ff0000;
 }
 
 .player-container{
-width:100%;
 max-width:800px;
-aspect-ratio:16/9;
 margin:40px auto;
-border:var(--neon-border);
-border-radius:15px;
-box-shadow:var(--neon-shadow);
+aspect-ratio:16/9;
 background:black;
 display:flex;
 justify-content:center;
 align-items:center;
-overflow:hidden;
 position:relative;
 }
 
 #player-frame,#player-video{
 width:100%;
 height:100%;
-border:none;
 display:none;
 }
 
-.placeholder-text{
-color:#444;
-font-size:14px;
-position:absolute;
-}
-
-footer{
-text-align:center;
-font-size:10px;
-color:#666;
-margin-top:40px;
-}
-
-@media (max-width:768px){
-.grid-jogos{grid-template-columns:1fr;}
-}
 </style>
 </head>
 
@@ -188,12 +112,9 @@ margin-top:40px;
 <button onclick="showMenu('jogos')">Jogos</button>
 <button onclick="showMenu('videos')">Vídeos</button>
 <button onclick="showMenu('extra')">Vídeo Extra</button>
+<button onclick="showMenu('imvu')">IMVU</button>
 </div>
 </header>
-
-<div class="welcome-msg">
-Bem-vindo ao <span>Daddy</span>
-</div>
 
 <div class="main-container">
 
@@ -477,9 +398,6 @@ Bem-vindo ao <span>Daddy</span>
 
 
 
-
-
-
 <!-- MENU VIDEO EXTRA -->
 <div id="menu-extra" class="grid-jogos" style="display:none;">
 
@@ -618,77 +536,51 @@ Bem-vindo ao <span>Daddy</span>
 
 </div>
 
-
-
-
-
-
-<div class="player-container">
-
-<div id="placeholder" class="placeholder-text">
-Selecione um jogo ou vídeo
+<!-- IMVU -->
+<div id="menu-imvu" class="grid-jogos" style="display:none;">
+<div class="card" onclick="showVideo('https://files.catbox.moe/2u7aji.mp4')">
+<div class="card-thumb" style="background-image:url('https://files.catbox.moe/c6jfr1.png')"></div>
+<div class="card-content"><h3>IMVU Vídeo</h3></div>
+</div>
 </div>
 
+<!-- PLAYER -->
+<div class="player-container">
 <iframe id="player-frame"></iframe>
 <video id="player-video" controls></video>
-
 </div>
-
-<footer>
-CONTEÚDO PARA MAIORES DE 18 ANOS<br>
-© 2024 ISAC SANTOS<br><br>
-
-Siga no Instagram:
-<a href="https://instagram.com/zakmodz1" target="_blank" class="insta-btn">
-📸 @zakmodz1
-</a>
-
-</footer>
 
 </div>
 
 <script>
 
 function playGame(url){
-const video=document.getElementById('player-video');
-video.pause();
-video.style.display='none';
-
 const frame=document.getElementById('player-frame');
+const video=document.getElementById('player-video');
 
-document.getElementById('placeholder').style.display='none';
-
+video.style.display='none';
 frame.style.display='block';
 frame.src=url;
 }
 
 function showVideo(url){
-document.getElementById('player-video').style.display='none';
+const frame=document.getElementById('player-frame');
+const video=document.getElementById('player-video');
 
-const frame = document.getElementById('player-frame');
+frame.style.display='none';
+video.style.display='block';
 
-document.getElementById('placeholder').style.display='none';
-
-frame.style.display='block';
-frame.src = url;
+video.src=url;
+video.play();
 }
 
 function showMenu(menu){
 document.getElementById('menu-jogos').style.display='none';
 document.getElementById('menu-videos').style.display='none';
 document.getElementById('menu-extra').style.display='none';
+document.getElementById('menu-imvu').style.display='none';
 
-if(menu==="jogos"){
-document.getElementById('menu-jogos').style.display='grid';
-}
-
-if(menu==="videos"){
-document.getElementById('menu-videos').style.display='grid';
-}
-
-if(menu==="extra"){
-document.getElementById('menu-extra').style.display='grid';
-}
+document.getElementById('menu-' + menu).style.display='grid';
 }
 
 </script>
