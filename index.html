@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Daddy - Jogos & Vídeos</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Variáveis */
+:root {
+  --color-primary: #ff1a1a;
+  --color-background: #111;
+  --font-header: 'Orbitron', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+}
+
+/* Corpo */
+body {
+  background-color: #050505;
+  background-image: radial-gradient(circle at center, #1a0000 0%, #000 100%);
+  color: #fff;
+  line-height: 1.6;
+  padding-bottom: 50px;
+}
+
+/* Cabeçalho */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background: rgba(0,0,0,0.7);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+.logo {
+  font-family: var(--font-header);
+  font-size: 2rem;
+  color: var(--color-primary);
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.nav-buttons button {
+  background: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  padding: 8px 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  font-family: var(--font-body);
+}
+.nav-buttons button:hover {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+/* Container principal */
+.main-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+/* Seções */
+section {
+  display: none;
+  margin-top: 30px;
+}
+section.active {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Grid de cartões */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Cartões */
+.card {
+  background-color: var(--color-background);
+  border: 2px solid var(--color-primary);
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  padding: 10px;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px var(--color-primary);
+}
+.card-thumb {
+  background-size: cover;
+  background-position: center;
+  flex: 1;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  height: 180px;
+}
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.btn-action {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: background-color 0.3s ease;
+}
+.btn-action:hover {
+  background-color: #e01111;
+}
+
+/* Player Container */
+.player-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 40px auto;
+  aspect-ratio: 16/9;
+  background-color: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#player-frame,
+#player-video,
+#player-image {
+  width: 100%;
+  height: 100%;
+  display: none;
+  border: none;
+  border-radius: 10px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px 10%;
+  background: rgba(0,0,0,0.7);
+  font-size: 0.9rem;
+  color: #aaa;
+}
+.insta-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+  box-shadow: 0 0 10px var(--color-primary);
+}
+.insta-btn:hover {
+  background: #e01111;
+  box-shadow: 0 0 20px var(--color-primary);
+  transform: scale(1.05);
+}
+
+/* Responsividade */
+@media(max-width: 768px){
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-buttons {
+    margin-top: 10px;
+  }
+  .player-container {
+    aspect-ratio: auto;
+    height: auto;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Daddy</div>
+  <div class="nav-buttons">
+    <button onclick="showSection('jogos')">JOGOS</button>
+    <button onclick="showSection('videos')">HENTAI</button>
+    <button onclick="showSection('extra')">SACANAS</button>
+    <button onclick="showSection('imvu')">IMVU</button>
+  </div>
+</header>
+
+<div class="main-container">
+
+  <!-- Seção Jogos -->
+  <section id="section-jogos" class="active">
+    <h2>Jogos</h2>
+    <div class="grid" id="jogos-grid">
+      <!-- 6 jogos -->
+      <div class="card" onclick="playGame('https://collegesexgames.com/swf/cdn/1287/')">
+        <div class="card-thumb" style="background-image:url('https://i.redd.it/p6nrkwo8wfze1.gif')"></div>
+        <div class="card-title">Dungeon Monsters</div>
+        <button class="btn-action">Jogar Agora</button>
+      </div>
+      <div class="card" onclick="playGame('https://collegesexgames.com/swf/cdn/1278/')">
+        <div class="card-thumb" style="background-image:url('https://i.redd.it/qgajmj9hkxpf1.gif')"></div>
+        <div class="card-title">Novo Jogo 1278</div>
+        <button class="btn-action">Jogar Agora</button>
+      </div>
+      <div class="card" onclick="playGame('https://collegesexgames.com/swf/cdn/1295/')">
+        <div class="card-thumb" style="background-image:url('https://i.redd.it/7i12fqom6yog1.gif')"></div>
+        <div class="card-title">Desejos do Verão</div>
+        <button class="btn-action">Jogar Agora</button>
+      </div>
+      <div class="card" onclick="playGame('https://collegesexgames.com/swf/cdn/1349/')">
+        <div class="card-thumb" style="background-image:url('https://s3.truyen-hentai.com/688d3c4031467038636069.gif')"></div>
+        <div class="card-title">Tristezas das Sombras</div>
+        <button class="btn-action">Jogar Agora</button>
+      </div>
+      <div class="card" onclick="playGame('https://collegesexgames.com/swf/cdn/1266/')">
+        <div class="card-thumb" style="background-image:url('https://i.redd.it/ntvgiyehjtog1.gif')"></div>
+        <div class="card-title">Noite de Terror</div>
+        <button class="btn-action">Jogar Agora</button>
+      </div>
+      <div class="card" onclick="playGame('https://jezztoonz.itch.io/futantastic-adventure')">
+        <div class="card-thumb" style="background-image:url('https://s3.truyen-hentai.com/6834e716d793d429605080.gif')"></div>
+        <div class="card-title">Futantastic Adventure</div>
+        <button class="btn-action">Jogar Agora</button>
+      </div>
+    </div>
+  </section>
+
+<!-- Seção Vídeos -->
+<section id="section-videos">
+  <h2>Hentai</h2>
+  <div class="grid" id="videos-grid">
+    <!-- Vídeo 1 -->
+    <div class="card" onclick="showVideo('https://ip344553056.ahcdn.com/key=+6dvHFf5AxkLfEUksVl3Hg,s=,end=1773774052/state=abmWj4k3/buffer=4936713:3183122,361.1/speed=705245/reftag=225999447/ssd4/383/8/411766998/a/409000/409755/409755.mp4')">
+      <div class="card-thumb" style="background-image:url('https://www.porngem.com/contents/videos_screenshots/409000/409755/preview.mp4.jpg')"></div>
+      <div class="card-title">Velma e Daphne 4K</div>
+      <button class="btn-action">Ver Vídeo</button>
+    </div>
+    <!-- Vídeo 2 -->
+    <div class="card" onclick="showVideo('h')">
+      <div class="card-thumb" style="background-image:url('https://g5.plibcdn.com/media/videos/tmb/471413/player/14.jpg')"></div>
+      <div class="card-title">anime freaks pumped</div>
+      <button class="btn-action">Ver Vídeo</button>
+    </div>
+    <!-- Vídeo 3 -->
+    <div class="card" onclick="showVideo('https://files.catbox.moe/0veazs.mp4')">
+      <div class="card-thumb" style="background-image:url('https://ic-vt-nss.xhcdn.com/a/YjY4NzRiNTcyYWYxODc1MjAzYWRhZDA2M2VhZmRhMGE/s(w:640,h:360),webp/027/323/460/v2/2560x1440.214.webp')"></div>
+      <div class="card-title">Cheating on My GF with Her Best Friend </div>
+      <button class="btn-action">Ver Vídeo</button>
+    </div>
+        <!-- Vídeo 4 -->
+    <div class="card" onclick="showVideo('https://ip344553056.ahcdn.com/key=7GyNveKSz2CR2AhJ-A00tg,s=,end=1773773699/state=abmVj4k3/buffer=1663434:3065412,1032.0/speed=237634/reftag=268713324/ssd2/383/5/292196745/f/22000/22071/22071.mp4')">
+      <div class="card-thumb" style="background-image:url('https://www.hentaigem.com/contents/videos_screenshots/22000/22071/preview.mp4.jpg')"></div>
+      <div class="card-title">Cheating on My GF with Her Best Friend </div>
+      <button class="btn-action">Ver Vídeo</button>
+    </div>
+            <!-- Vídeo 5 -->
+    <div class="card" onclick="showVideo('https://ip385402678.ahcdn.com/key=qinIqrfdbNSzjSXH4cHGWg,s=,end=1773774432,limit=2/data=hNvMzl/state=abmYj4k3/buffer=402000:1295877,814.0/speed=134000/reftag=0231070872/36/1272/2/357146472/b/191000/191911/191911.mp4')">
+      <div class="card-thumb" style="background-image:url('https://files.catbox.moe/mxj7k0.jpg')"></div>
+      <div class="card-title"> </div>
+      <button class="btn-action">Ver Vídeo</button>
+    </div>
+                <!-- Vídeo 6 -->
+    <div class="card" onclick="showVideo('https://ip381253094.ahcdn.com/key=6sMEcQNVYYAmAR+Ikhhq8Q,s=,end=1773774821/state=abmZj4k3/buffer=2140174:1712215,448.0/speed=305739/reftag=268713324/ssd3/383/3/440858623/f/96000/96046/96046.mp4')">
+      <div class="card-thumb" style="background-image:url('https://www.hentaigem.com/contents/videos_screenshots/96000/96046/preview.mp4.jpg')"></div>
+      <div class="card-title">Madrasta</div>
+      <button class="btn-action">Ver Vídeo</button>
+    </div>
+
+                        <!-- Vídeo 8 -->
+    <div class="card" onclick="showVideo('https://ip179698702.ahcdn.com/key=tQaltepkOvEdXPPe0xn0jg,s=,end=1773858192,limit=3/data=NXjDwm/state=abmcj4k3/buffer=445000:870926,342.2/speed=508956/referer=none,.aniporn.com,.gstatic.com/reftag=0304526226/ssd8/121/1/346615761/aniporn/c1/videos/158000/158777/158777.mp4')">
+      <div class="card-thumb" style="background-image:url('https://files.catbox.moe/arzuov.jpg')"></div>
+      <div class="card-title">Nerdy Girl In Home [1080h Spanishsub</div>
+      <button class="btn-action">Ver Vídeo</button>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Seção Sacanas -->
+  <section id="section-extra">
+    <h2>Sacanas</h2>
+    <div class="grid" id="extra-grid">
+      <!-- Vídeos e fotos -->
+      <div class="card" onclick="showVideo('https://files.catbox.moe/1gegis.mp4')">
+        <div class="card-thumb" style="background-image:url('https://thumb-cdn77.xvideos-cdn.com/a6d9424a-c1c6-4aca-8b57-581ba0dbc7dd/0/xv_28_t.jpg')"></div>
+        <div class="card-title">Maratona</div>
+        <button class="btn-action">Assistir</button>
+      </div>
+      <div class="card" onclick="showVideo('https://files.catbox.moe/quso6g.mp4')">
+        <div class="card-thumb" style="background-image:url('https://thumb-cdn77.xvideos-cdn.com/0a2f649d-95de-48dd-afd6-e12f0e8f77e8/0/xv_30_t.jpg')"></div>
+        <div class="card-title">Gozadas</div>
+        <button class="btn-action">Assistir</button>
+      </div>
+      <div class="card" onclick="showVideo('https://files.catbox.moe/pflpep.mp4')">
+        <div class="card-thumb" style="background-image:url('https://thumbs-gcore.xvideos-cdn.com/bfde03e5-2dc5-47f8-a6f0-9d862f5a975f/3/xv_11_t.jpg')"></div>
+        <div class="card-title">surpresa no banheiro</div>
+        <button class="btn-action">Assistir</button>
+      </div>
+      <div class="card" onclick="showVideo('https://files.catbox.moe/tyof7k.mp4')">
+        <div class="card-thumb" style="background-image:url('https://thumb-cdn77.xvideos-cdn.com/4ad357bf-e2c4-4a67-8256-dfceb6b0eb02/0/xv_29_t.jpg')"></div>
+        <div class="card-title">Deu o cu na hora do café da manhã!</div>
+        <button class="btn-action">Assistir</button>
+      </div>
+      <div class="card" onclick="showVideo('https://files.catbox.moe/ytndsj.mp4')">
+        <div class="card-thumb" style="background-image:url('https://thumb-cdn77.xvideos-cdn.com/f3db4165-cb63-47b0-af2e-644cda5aa362/0/xv_15_t.jpg')"></div>
+        <div class="card-title">Anal intenso! Essas novinhas aguentam firme no cuzinho!</div>
+        <button class="btn-action">Assistir</button>
+      </div>
+      <div class="card" onclick="showVideo('https://files.catbox.moe/yflenj.mp4')">
+        <div class="card-thumb" style="background-image:url('https://thumb-cdn77.xvideos-cdn.com/b096b30f-fbb0-4fcd-a555-50c8c278bb1c/0/xv_20_t.jpg')"></div>
+        <div class="card-title">proibido com a novinha gostosa!</div>
+        <button class="btn-action">Assistir</button>
+      </div>
+      <!-- Fotos IMVU -->
+      <div class="card" onclick="showImage('https://files.catbox.moe/h3937l.jpg')">
+        <div class="card-thumb" style="background-image:url('https://files.catbox.moe/h3937l.jpg')"></div>
+        <div class="card-title">IMVU Foto</div>
+        <button class="btn-action">Ver Imagem</button>
+      </div>
+      <div class="card" onclick="showImage('https://files.catbox.moe/0fygtq.jpg')">
+        <div class="card-thumb" style="background-image:url('https://files.catbox.moe/0fygtq.jpg')"></div>
+        <div class="card-title">IMVU Foto</div>
+        <button class="btn-action">Ver Imagem</button>
+      </div>
+      <div class="card" onclick="showImage('https://files.catbox.moe/0v5a3t.jpg')">
+        <div class="card-thumb" style="background-image:url('https://files.catbox.moe/0v5a3t.jpg')"></div>
+        <div class="card-title">IMVU Foto</div>
+        <button class="btn-action">Ver Imagem</button>
+      </div>
+      <!-- Fotos IMVU adicionais -->
+      <div class="card" onclick="showImage('https://files.catbox.moe/6v9t0f.jpg')">
+        <div class="card-thumb" style="background-image:url('https://files.catbox.moe/6v9t0f.jpg')"></div>
+        <div class="card-title">IMVU Foto</div>
+        <button class="btn-action">Ver Imagem</button>
+      </div>
+      <div class="card" onclick="showImage('https://files.catbox.moe/llxbyo.jpg')">
+        <div class="card-thumb" style="background-image:url('https://files.catbox.moe/llxbyo.jpg')"></div>
+        <div class="card-title">IMVU Foto</div>
+        <button class="btn-action">Ver Imagem</button>
+      </div>
+      <div class="card" onclick="showImage('https://files.catbox.moe/x15vmi.jpg')">
+        <div class="card-thumb" style="background-image:url('https://files.catbox.moe/x15vmi.jpg')"></div>
+        <div class="card-title">IMVU Foto</div>
+        <button class="btn-action">Ver Imagem</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção IMVU -->
+  <section id="section-imvu">
+    <h2>IMVU</h2>
+    <div class="grid" id="imvu-grid">
+      <!-- Vídeos IMVU -->
+      <div class="card" onclick="showVideo('https://files.catbox.moe/2u7aji.mp4')">
+        <div class="card-thumb" style="background-image:url('https://files.catbox.moe/c6jfr1.png')"></div>
+        <div class="card-title">IMVU Vídeo</div>
+        <button class="btn-action">Assistir</button>
+      </div>
+      <div class="card" onclick="showVideo('https://files.catbox.moe/gsmizf.mp4')">
+        <div class="card-thumb" style="background-image:url('https://files.catbox.moe/2fpm7t.png')"></div>
+        <div class="card-title">IMVU Vídeo</div>
+        <button class="btn-action">Assistir</button>
+      </div>
+      <div class="card" onclick="showVideo('https://files.catbox.moe/nyvilz.mp4')">
+        <div class="card-thumb" style="background-image:url('https://files.catbox.moe/c2n7jh.png')"></div>
+        <div class="card-title">IMVU Vídeo</div>
+        <button class="btn-action">Assistir</button>
+      </div>
+      <div class="card" onclick="showVideo('https://files.catbox.moe/ggqezk.mp4')">
+        <div class="card-thumb" style="background-image:url('https://files.catbox.moe/alhpy2.png')"></div>
+        <div class="card-title">IMVU Vídeo</div>
+        <button class="btn-action">Assistir</button>
+      </div>
+      <div class="card" onclick="showVideo('https://files.catbox.moe/testfr.mp4')">
+        <div class="card-thumb" style="background-image:url('https://files.catbox.moe/a9t90c.png')"></div>
+        <div class="card-title">IMVU Vídeo</div>
+        <button class="btn-action">Assistir</button>
+      </div>
+      <!-- Fotos IMVU -->
+      <div class="card" onclick="showImage('https://files.catbox.moe/h3937l.jpg')">
+        <div class="card-thumb" style="background-image:url('https://files.catbox.moe/h3937l.jpg')"></div>
+        <div class="card-title">IMVU Foto</div>
+        <button class="btn-action">Ver Imagem</button>
+      </div>
+      <div class="card" onclick="showImage('https://files.catbox.moe/0fygtq.jpg')">
+        <div class="card-thumb" style="background-image:url('https://files.catbox.moe/0fygtq.jpg')"></div>
+        <div class="card-title">IMVU Foto</div>
+        <button class="btn-action">Ver Imagem</button>
+      </div>
+      <div class="card" onclick="showImage('https://files.catbox.moe/0v5a3t.jpg')">
+        <div class="card-thumb" style="background-image:url('https://files.catbox.moe/0v5a3t.jpg')"></div>
+        <div class="card-title">IMVU Foto</div>
+        <button class="btn-action">Ver Imagem</button>
+      </div>
+      <!-- Fotos IMVU adicionais -->
+      <div class="card" onclick="showImage('https://files.catbox.moe/6v9t0f.jpg')">
+        <div class="card-thumb" style="background-image:url('https://files.catbox.moe/6v9t0f.jpg')"></div>
+        <div class="card-title">IMVU Foto</div>
+        <button class="btn-action">Ver Imagem</button>
+      </div>
+      <div class="card" onclick="showImage('https://files.catbox.moe/llxbyo.jpg')">
+        <div class="card-thumb" style="background-image:url('https://files.catbox.moe/llxbyo.jpg')"></div>
+        <div class="card-title">IMVU Foto</div>
+        <button class="btn-action">Ver Imagem</button>
+      </div>
+      <div class="card" onclick="showImage('https://files.catbox.moe/x15vmi.jpg')">
+        <div class="card-thumb" style="background-image:url('https://files.catbox.moe/x15vmi.jpg')"></div>
+        <div class="card-title">IMVU Foto</div>
+        <button class="btn-action">Ver Imagem</button>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- Player -->
+<div class="player-container" id="player-container">
+  <iframe id="player-frame" allowfullscreen></iframe>
+  <video id="player-video" controls></video>
+  <img id="player-image" />
+</div>
+
+<!-- Rodapé -->
+<footer>
+  Conteúdo para maiores de 18 anos<br />
+  &copy; 2024 ISAC SANTOS<br />
+  Quer sua foto ou vídeo aqui? Me manda no Instagram<br />
+  <a href="https://instagram.com/zakmodz1" target="_blank" class="insta-btn">@zakmodz1</a>
+</footer>
+
+<script>
+// Função para trocar entre seções
+function showSection(section) {
+  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+  document.getElementById('section-' + section).classList.add('active');
+}
+// Inicializa a aba padrão
+showSection('jogos');
+
+// Função para mostrar vídeo, iframe ou imagem
+function showVideo(url) {
+  const frame = document.getElementById('player-frame');
+  const video = document.getElementById('player-video');
+  const image = document.getElementById('player-image');
+
+  frame.style.display = 'none';
+  video.style.display = 'none';
+  image.style.display = 'none';
+
+  if(url.endsWith('.mp4')){
+    video.src = url;
+    video.style.display='block';
+    video.play();
+  } 
+  else if(url.includes('streamable.com')) {
+    let videoId = url.split('/').pop(); // pega o ID
+    frame.src = `https://streamable.com/o/${videoId}`;
+    frame.style.display='block';
+  } 
+  else {
+    image.src = url;
+    image.style.display='block';
+  }
+}
+// Função para jogar jogos (iframe)
+function playGame(url) {
+  showVideo(url);
+}
+</script>
+
+</body>
+</html>
