@@ -121,6 +121,13 @@ box-shadow:0 0 20px #ff0000;
 transform:scale(1.05);
 }
 
+#player-image{
+width:100%;
+height:100%;
+display:none;
+object-fit:contain;
+}
+
 footer{
 text-align:center;
 font-size:12px;
@@ -563,20 +570,48 @@ margin-top:40px;
 
 </div>
 
-<!-- IMVU -->
 <div id="menu-imvu" class="grid-jogos" style="display:none;">
+
+<!-- VIDEO -->
 <div class="card" onclick="showVideo('https://files.catbox.moe/2u7aji.mp4')">
 <div class="card-thumb" style="background-image:url('https://files.catbox.moe/c6jfr1.png')"></div>
-<div class="card-content"><h3>IMVU Vídeo</h3></div>
+<div class="card-content">
+<h3>IMVU Vídeo</h3>
+<button class="btn-jogar">Assistir</button>
 </div>
 </div>
+
+
+<!-- IMAGEM -->
+<div class="card" onclick="showImage('https://files.catbox.moe/h3937l.jpg')">
+<div class="card-thumb" style="background-image:url('https://files.catbox.moe/h3937l.jpg')"></div>
+<div class="card-content">
+<h3>IMVU Foto</h3>
+<button class="btn-jogar">Ver Imagem</button>
+</div>
+</div>
+
+
+
+<!-- IMAGEM -->
+<div class="card" onclick="showImage('https://files.catbox.moe/0fygtq.jpg')">
+<div class="card-thumb" style="background-image:url('https://files.catbox.moe/0fygtq.jpg')"></div>
+<div class="card-content">
+<h3>IMVU Foto</h3>
+<button class="btn-jogar">Ver Imagem</button>
+</div>
+</div>
+
+</div>
+
+
+
 
 <!-- PLAYER -->
 <div class="player-container">
 <iframe id="player-frame"></iframe>
 <video id="player-video" controls></video>
-</div>
-
+<img id="player-image">
 </div>
 
 
@@ -597,12 +632,28 @@ Siga no Instagram:<br>
 
 <script>
 
+function showImage(url){
+const frame=document.getElementById('player-frame');
+const video=document.getElementById('player-video');
+const image=document.getElementById('player-image');
+
+frame.style.display='none';
+video.pause();
+video.style.display='none';
+
+image.style.display='block';
+image.src=url;
+}
+
+
 function playGame(url){
 const frame=document.getElementById('player-frame');
 const video=document.getElementById('player-video');
+const image=document.getElementById('player-image');
 
 video.pause();
 video.style.display='none';
+image.style.display='none';
 
 frame.style.display='block';
 frame.src=url;
@@ -611,8 +662,10 @@ frame.src=url;
 function showVideo(url){
 const frame=document.getElementById('player-frame');
 const video=document.getElementById('player-video');
+const image=document.getElementById('player-image');
 
 frame.style.display='none';
+image.style.display='none';
 
 video.style.display='block';
 video.src=url;
