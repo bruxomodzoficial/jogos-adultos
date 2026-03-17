@@ -100,6 +100,33 @@ height:100%;
 display:none;
 }
 
+<style>
+.insta-btn{
+display:inline-block;
+margin-top:10px;
+padding:10px 20px;
+background:#ff1a1a;
+color:white;
+text-decoration:none;
+border-radius:20px;
+font-size:12px;
+font-weight:bold;
+transition:0.3s;
+box-shadow:0 0 10px #ff0000;
+}
+
+.insta-btn:hover{
+background:#ff3333;
+box-shadow:0 0 20px #ff0000;
+transform:scale(1.05);
+}
+
+footer{
+text-align:center;
+font-size:12px;
+color:#aaa;
+margin-top:40px;
+}
 </style>
 </head>
 
@@ -552,13 +579,31 @@ display:none;
 
 </div>
 
+
+
+<footer>
+CONTEÚDO PARA MAIORES DE 18 ANOS<br>
+© 2024 ISAC SANTOS<br><br>
+
+Siga no Instagram:<br>
+
+<a href="https://instagram.com/zakmodz1" target="_blank" class="insta-btn">
+📸 Seguir @zakmodz1
+</a>
+
+</footer>
+
+</div>
+
 <script>
 
 function playGame(url){
 const frame=document.getElementById('player-frame');
 const video=document.getElementById('player-video');
 
+video.pause();
 video.style.display='none';
+
 frame.style.display='block';
 frame.src=url;
 }
@@ -568,8 +613,8 @@ const frame=document.getElementById('player-frame');
 const video=document.getElementById('player-video');
 
 frame.style.display='none';
-video.style.display='block';
 
+video.style.display='block';
 video.src=url;
 video.play();
 }
